@@ -225,6 +225,7 @@ class EditorPanel {
                 vscode.workspace.getWorkspaceFolder(this._uri)?.uri.fsPath || ''
               )
               .replace('${file}', this._fsPath)
+              .replace('${fileName}', NodePath.basename(this._fsPath).split(".")[0])
               .replace('${dir}', NodePath.dirname(this._fsPath))
             const assetsFolder = NodePath.resolve(
               NodePath.dirname(this._fsPath),
